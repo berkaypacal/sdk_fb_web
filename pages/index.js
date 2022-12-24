@@ -23,12 +23,12 @@ export default function Home() {
           window.location.href = "vfb://?code=" + res.user.email;
           console.log(res);
         } else {
-          setMail("HATA");
+          setMail("HATA 111");
         }
       })
       .catch((err) => {
         //setMail(err);
-        setMail("HATA");
+        setMail("HATA 222");
 
         //console.log(err);
       });
