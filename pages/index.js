@@ -14,6 +14,8 @@ export default function Home() {
     const provider = new FacebookAuthProvider();
     signInWithPopup(authentication, provider)
       .then((res) => {
+        setMail("Hata Var");
+
         if (res.user.email != null && res.user.email != "") {
           //setMail(res.user.email);
           setMail("Başarılı");
