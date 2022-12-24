@@ -28,7 +28,7 @@ export default function Home() {
       })
       .catch((err) => {
         //setMail(err);
-        setMail("HATA 222");
+        setMail("HATA 222 " + err);
 
         //console.log(err);
       });
