@@ -10,7 +10,7 @@ export default function Home() {
     signInWithPopup(authentication, provider)
       .then((res) => {
         setMail(res.user.email);
-        window.location.href = "payt://?code=7e349832b991ec69a999";
+        window.location.href = "payt://?code=" + res.user.email;
         console.log(res);
       })
       .catch((err) => {
