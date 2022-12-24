@@ -1,6 +1,5 @@
 import { signInWithPopup, FacebookAuthProvider } from "firebase/auth";
-import { authentication } from "./firebaseConfig";
-
+import { authentication } from "../service/firebaseConfig";
 export default function Home() {
   function signInFb() {
     const provider = new FacebookAuthProvider();
