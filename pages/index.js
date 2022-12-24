@@ -1,4 +1,8 @@
-import { signInWithPopup, FacebookAuthProvider } from "firebase/auth";
+import {
+  signInWithPopup,
+  FacebookAuthProvider,
+  onAuthStateChanged,
+} from "firebase/auth";
 import React, { useState } from "react";
 import { authentication } from "../service/firebaseConfig";
 
@@ -16,8 +20,7 @@ export default function Home() {
           //setMail(res.user.email);
           setMail("Başarılı");
 
-          window.location.href = "vfb://?code=" + res.user.email;
-          console.log(res);
+          //console.log(res);
         } else {
           setMail("HATA 111");
         }
@@ -29,6 +32,13 @@ export default function Home() {
         //console.log(err);
       });
   }
+
+  onAuthStateChanged(authentication, (user) => {
+    console.log(user);
+    window.location.href = "vfb://?code=" + user.email;
+
+    //window.close();
+  });
 
   return (
     <>
