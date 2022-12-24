@@ -8,7 +8,7 @@ import React, { Component } from "react";
 import { useRouter } from "next/router";
 
 export default function Home() {
-  //const [mail, setMail] = React.useState("");
+  const [mail, setMail] = React.useState("");
 
   function signInFb() {
     const provider = new FacebookAuthProvider();
@@ -16,15 +16,19 @@ export default function Home() {
       .then((res) => {
         if (res.user.email != null && res.user.email != "") {
           //setMail(res.user.email);
+          setMail("Başarılı");
+
           window.location.href = "vfb://?code=" + res.user.email;
-          //console.log(res);
+          console.log(res);
         } else {
-          //setMail("HATA");
+          setMail("HATA");
         }
       })
       .catch((err) => {
         //setMail(err);
-        console.log(err);
+        setMail("HATA");
+
+        //console.log(err);
       });
     console.log("aa");
   }
@@ -32,6 +36,7 @@ export default function Home() {
   return (
     <>
       <button onClick={() => signInFb()}>Test</button>
+      <p>{mail}</p>
     </>
   );
 }
