@@ -15,6 +15,7 @@ export default function Home() {
         console.log(res);
       })
       .catch((err) => {
+        setMail(err);
         console.log(err);
       });
     console.log("aa");
