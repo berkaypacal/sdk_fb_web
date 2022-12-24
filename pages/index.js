@@ -2,12 +2,17 @@ import {
   signInWithPopup,
   FacebookAuthProvider,
   onAuthStateChanged,
+  signOut,
 } from "firebase/auth";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { authentication } from "../service/firebaseConfig";
 
 export default function Home() {
   const [mail, setMail] = useState("");
+
+  useEffect(() => {
+    signOut(authentication);
+  }, []);
 
   function signInFb() {
     const provider = new FacebookAuthProvider();
@@ -34,8 +39,10 @@ export default function Home() {
   }
 
   onAuthStateChanged(authentication, (user) => {
-    console.log(user);
-    window.location.href = "vfb://?code=" + user.email;
+    if (user != null && user != undefined) {
+      console.log(user);
+      window.location.href = "vfb://?code=" + user.email;
+    }
 
     //window.close();
   });
