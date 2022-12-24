@@ -1,17 +1,13 @@
-import {
-  signInWithPopup,
-  FacebookAuthProvider,
-  signInWithRedirect,
-} from "firebase/auth";
+import { signInWithPopup, FacebookAuthProvider } from "firebase/auth";
+import React, { useState } from "react";
 import { authentication } from "../service/firebaseConfig";
-import React, { Component } from "react";
-import { useRouter } from "next/router";
 
 export default function Home() {
-  const [mail, setMail] = React.useState("");
+  const [mail, setMail] = useState("");
 
   function signInFb() {
     const provider = new FacebookAuthProvider();
+
     signInWithPopup(authentication, provider)
       .then((res) => {
         setMail("Hata Var");
@@ -32,12 +28,17 @@ export default function Home() {
 
         //console.log(err);
       });
-    console.log("aa");
   }
 
   return (
     <>
-      <button onClick={() => signInFb()}>Test</button>
+      <button
+        onClick={() => {
+          signInFb();
+        }}
+      >
+        Test
+      </button>
       <p>{mail}</p>
     </>
   );

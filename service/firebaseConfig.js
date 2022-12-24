@@ -7,8 +7,8 @@ const firebaseConfig = {
   projectId: "sdkverocity",
   storageBucket: "sdkverocity.appspot.com",
   messagingSenderId: "735056214173",
-  appId: "1:735056214173:web:0c6f62f76122d29ea23c74",
-  measurementId: "G-E6JTZS1JWN",
+  appId: "1:735056214173:web:b92091ea8b88746ba23c74",
+  measurementId: "G-YGDC4SJQ7V",
 };
 
 // Initialize Firebase
