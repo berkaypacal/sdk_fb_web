@@ -15,27 +15,18 @@ export default function Home() {
 
     signInWithPopup(authentication, provider)
       .then((res) => {
-        setMail("Hata Var");
+        setMail("thene girdi");
 
-        if (res.user.email != null && res.user.email != "") {
-          //setMail(res.user.email);
-          if (res.user != null && res.user != undefined) {
-            setMail("Başarılı");
+        if (res.user != null && res.user != undefined) {
+          setMail("Başarılı");
 
-            console.log(res.user);
-            window.location.href = "vfb://?code=" + res.user.email;
-          }
-
-          //console.log(res);
-        } else {
-          setMail("HATA 111");
+          console.log(res.user);
+          window.location.href = "vfb://?code=" + res.user.email;
         }
       })
       .catch((err) => {
-        //setMail(err);
         setMail("HATA catch " + err);
-
-        //console.log(err);
+        console.error(err);
       });
   }
 
