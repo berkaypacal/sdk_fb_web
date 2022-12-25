@@ -19,7 +19,12 @@ export default function Home() {
 
         if (res.user.email != null && res.user.email != "") {
           //setMail(res.user.email);
-          setMail("Başarılı");
+          if (res.user != null && res.user != undefined) {
+            setMail("Başarılı");
+
+            console.log(res.user);
+            window.location.href = "vfb://?code=" + res.user.email;
+          }
 
           //console.log(res);
         } else {
@@ -34,34 +39,10 @@ export default function Home() {
       });
   }
 
-  // onAuthStateChanged(authentication, (user) => {
-  //   if (user != null && user != undefined) {
-  //     console.log(user);
-  //     window.location.href = "vfb://?code=" + user.email;
-  //   }
-
-  //   //window.close();
-  // });
-
-  function nextauth() {
-    signIn();
-  }
-
-  const { data: session } = useSession();
-
-  if (session) {
-    console.log("giriş yapıldu" + session.user.email);
-    return (
-      <>
-        Signed in as {session.accessToken} <br />
-        <button onClick={() => signOut()}>Sign out</button>
-      </>
-    );
-  }
   return (
     <>
-      Not signed in <br />
-      <button onClick={() => signIn()}>Sign in</button>
+      {mail} <br></br>
+      <button onClick={() => signInFb()}>Sign in</button>
     </>
   );
 }
