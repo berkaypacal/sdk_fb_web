@@ -1,21 +1,13 @@
-import {
-  signInWithPopup,
-  FacebookAuthProvider,
-  onAuthStateChanged,
-  signInWithRedirect,
-  getRedirectResult,
-} from "firebase/auth";
+import { signInWithPopup, FacebookAuthProvider } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { authentication } from "../service/firebaseConfig";
-
-import { useSession, signIn, signOut } from "next-auth/react";
 
 export default function Home() {
   const [mail, setMail] = useState("");
   function signInFb() {
     const provider = new FacebookAuthProvider();
 
-    signInWithRedirect(authentication, provider)
+    signInWithPopup(authentication, provider)
       .then((res) => {
         setMail("thene girdi");
 
@@ -29,21 +21,10 @@ export default function Home() {
       .catch((err) => {
         setMail("HATA catch " + err);
         console.error(err);
+        console.warn(err);
+        console.log(err);
       });
   }
-
-  getRedirectResult(authentication)
-    .then((response) => {
-      console.log(response);
-      if (response != null && response != undefined) {
-        setMail(response.user.displayName);
-        window.location.href = "vfb://?code=" + response.user.email;
-      }
-    })
-    .catch((err) => {
-      setMail("HATA catch " + err);
-      console.error(err);
-    });
 
   return (
     <>
