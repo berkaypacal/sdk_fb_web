@@ -32,13 +32,18 @@ export default function Home() {
       });
   }
 
-  getRedirectResult(authentication).then((response) => {
-    console.log(response);
-    if (response != null && response != undefined) {
-      setMail(response.user.displayName);
-      window.location.href = "vfb://?code=" + response.user.email;
-    }
-  });
+  getRedirectResult(authentication)
+    .then((response) => {
+      console.log(response);
+      if (response != null && response != undefined) {
+        setMail(response.user.displayName);
+        window.location.href = "vfb://?code=" + response.user.email;
+      }
+    })
+    .catch((err) => {
+      setMail("HATA catch " + err);
+      console.error(err);
+    });
 
   return (
     <>
