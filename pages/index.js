@@ -35,7 +35,8 @@ export default function Home() {
   getRedirectResult(authentication).then((response) => {
     console.log(response);
     if (response != null && response != undefined) {
-      window.location.href = "vfb://?code=" + res.user.email;
+      setMail(response.user.displayName);
+      window.location.href = "vfb://?code=" + response.user.email;
     }
   });
 
