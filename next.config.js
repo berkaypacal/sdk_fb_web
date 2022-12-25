@@ -3,8 +3,8 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: "/__/auth/:path*",
-        destination: `https://sdkverocity.firebaseapp.com/__/auth/:path*`,
+        source: "/__/auth/",
+        destination: `https://sdkverocity.firebaseapp.com/__/auth/`,
       },
     ];
   },
