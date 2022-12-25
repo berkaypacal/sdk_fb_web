@@ -2,6 +2,8 @@ import {
   signInWithPopup,
   FacebookAuthProvider,
   onAuthStateChanged,
+  signInWithRedirect,
+  getRedirectResult,
 } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { authentication } from "../service/firebaseConfig";
@@ -13,7 +15,7 @@ export default function Home() {
   function signInFb() {
     const provider = new FacebookAuthProvider();
 
-    signInWithPopup(authentication, provider)
+    signInWithRedirect(authentication, provider)
       .then((res) => {
         setMail("thene girdi");
 
@@ -29,6 +31,13 @@ export default function Home() {
         console.error(err);
       });
   }
+
+  getRedirectResult(authentication).then((response) => {
+    console.log(response);
+    if (response != null && response != undefined) {
+      window.location.href = "vfb://?code=" + res.user.email;
+    }
+  });
 
   return (
     <>
