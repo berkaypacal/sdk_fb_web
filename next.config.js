@@ -1,13 +1,12 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+
+module.exports = {
   async rewrites() {
     return [
       {
-        source: "/__/auth/",
-        destination: `https://sdkverocity.firebaseapp.com/__/auth/`,
+        source: "/__/auth/:path*",
+        destination: `https://sdkverocity.firebaseapp.com/__/auth/:path*`,
       },
     ];
   },
 };
-
-module.exports = nextConfig;
