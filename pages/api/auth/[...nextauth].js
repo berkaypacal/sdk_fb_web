@@ -8,8 +8,8 @@ export const authOptions = {
     FacebookProvider({
       clientId: process.env.NEXT_PUBLIC_ClIENT_ID,
       clientSecret: process.env.NEXT_PUBLIC_SECRET,
-      //idToken: true,
-      authorization: { params: { scope: "email" } },
+      idToken: true,
+      authorization: { params: { scope: "openid" } },
     }),
     // ...add more providers here
   ],
