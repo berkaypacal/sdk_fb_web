@@ -9,6 +9,7 @@ import { authentication } from "../service/firebaseConfig";
 
 export default function Home() {
   const [mail, setMail] = useState("");
+
   function signInFb() {
     const provider = new FacebookAuthProvider();
 
