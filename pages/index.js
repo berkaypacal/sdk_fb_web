@@ -1,15 +1,9 @@
-import {
-  signInWithPopup,
-  FacebookAuthProvider,
-  signInWithRedirect,
-} from "firebase/auth";
-import { signIn, signOut, useSession } from "next-auth/react";
+import { signInWithPopup, FacebookAuthProvider } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { authentication } from "../service/firebaseConfig";
 
 export default function Home() {
   const [mail, setMail] = useState("");
-
   function signInFb() {
     const provider = new FacebookAuthProvider();
 
@@ -25,6 +19,9 @@ export default function Home() {
         }
       })
       .catch((err) => {
+        if (err != null && err != undefined) {
+          signInFb();
+        }
         setMail("HATA catch " + err);
         console.error(err);
         console.warn(err);
@@ -32,20 +29,10 @@ export default function Home() {
       });
   }
 
-  const { data: session } = useSession();
-  if (session) {
-    console.log(session);
-    return (
-      <>
-        Signed in as {session.user.name} <br />
-        <button onClick={() => signOut()}>Sign out</button>
-      </>
-    );
-  }
   return (
     <>
-      Not signed in <br />
-      <button onClick={() => signIn()}>Sign in</button>
+      {mail} <br></br>
+      <button onClick={() => signInFb()}>Sign in</button>
     </>
   );
 }
