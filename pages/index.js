@@ -19,9 +19,6 @@ export default function Home() {
         }
       })
       .catch((err) => {
-        if (err != null && err != undefined) {
-          signInFb();
-        }
         setMail("HATA catch " + err);
         console.error(err);
         console.warn(err);
