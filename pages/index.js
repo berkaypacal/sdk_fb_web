@@ -1,4 +1,9 @@
-import { signInWithPopup, FacebookAuthProvider } from "firebase/auth";
+import {
+  signInWithPopup,
+  FacebookAuthProvider,
+  signInWithRedirect,
+} from "firebase/auth";
+import { signIn, signOut, useSession } from "next-auth/react";
 import React, { useEffect, useState } from "react";
 import { authentication } from "../service/firebaseConfig";
 
@@ -26,10 +31,20 @@ export default function Home() {
       });
   }
 
+  const { data: session } = useSession();
+  if (session) {
+    console.log(session);
+    return (
+      <>
+        Signed in as {session.user.name} <br />
+        <button onClick={() => signOut()}>Sign out</button>
+      </>
+    );
+  }
   return (
     <>
-      {mail} <br></br>
-      <button onClick={() => signInFb()}>Sign in</button>
+      Not signed in <br />
+      <button onClick={() => signIn()}>Sign in</button>
     </>
   );
 }
