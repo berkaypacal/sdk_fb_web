@@ -17,6 +17,27 @@ export const authOptions = {
           response_type: "code",
         },
       },
+      token: {
+        url: "https://graph.facebook.com/oauth/access_token",
+        async request(context) {
+          try {
+            // request to https://graph.facebook.com/oauth/access_token?code=""&client_id=""&redirect_uri=""&client_secret=""
+            const response = await axios.get(this.url, {
+              params: {
+                code: context.params.code,
+                client_id: context.provider.clientId,
+                redirect_uri: context.provider.callbackUrl,
+                client_secret: context.provider.clientSecret,
+              },
+            });
+
+            const tokens = response.data;
+            return { tokens };
+          } catch (error) {
+            throw error;
+          }
+        },
+      },
     }),
     // ...add more providers here
   ],
