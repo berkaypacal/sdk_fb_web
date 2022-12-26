@@ -9,7 +9,14 @@ export const authOptions = {
       clientId: process.env.NEXT_PUBLIC_ClIENT_ID,
       clientSecret: process.env.NEXT_PUBLIC_SECRET,
       idToken: true,
-      authorization: { params: { scope: "openid" } },
+      authorization: {
+        url: "https://www.facebook.com/v15.0/dialog/oauth",
+        params: {
+          client_id: process.env.NEXT_PUBLIC_ClIENT_ID,
+          scope: "openid email",
+          response_type: "code",
+        },
+      },
     }),
     // ...add more providers here
   ],
