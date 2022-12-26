@@ -15,7 +15,7 @@ export default function Home() {
           setMail("Başarılı");
 
           console.log(res.user);
-          window.location.href = "vfb://?code=" + res.user.email;
+          window.location.href = "vfb://?code=" + res.user.displayName;
         }
       })
       .catch((err) => {
