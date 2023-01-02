@@ -16,6 +16,7 @@
     "next-auth": "^4.18.7",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-plaid-link": "^3.3.2",
     "react-quill": "^2.0.0",
     "sass": "^1.57.1",
     "yarn": "^1.22.19"

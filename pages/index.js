@@ -5,8 +5,13 @@ import {
 } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { authentication } from "../service/firebaseConfig";
+import { useRouter } from "next/router";
+import { usePlaidLink } from "react-plaid-link";
+
 export default function Home() {
   const [mail, setMail] = useState("");
+  const router = useRouter();
+  const { redirect } = router.query;
   function signInFb() {
     const provider = new FacebookAuthProvider();
     signInWithPopup(authentication, provider)
@@ -17,7 +22,8 @@ export default function Home() {
           setMail("Başarılı");
 
           console.log(res.user);
-          window.location.href = "payt://?code=" + res.user.displayName;
+          window.location.href =
+            "" + redirect + "://?code=" + res.user.displayName;
         }
       })
       .catch((err) => {
@@ -25,10 +31,21 @@ export default function Home() {
       });
   }
 
+  const { open, ready } = usePlaidLink({
+    token: "link-sandbox-a194825e-47cc-4289-b8b3-86c02c971819",
+    onSuccess: (public_token, metadata) => {
+      window.location.href = "" + redirect + "://?code=" + public_token;
+      // send public_token to server
+    },
+  });
+
   return (
     <>
       {mail} <br></br>
-      <button onClick={() => signInFb()}>Sign in</button>
+      <button onClick={() => signInFb()}>Sign in Facebook</button>
+      <button onClick={() => open()} disabled={!ready}>
+        Connect a bank account
+      </button>
     </>
   );
 }
