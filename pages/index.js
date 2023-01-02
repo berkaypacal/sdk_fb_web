@@ -14,6 +14,9 @@ export default function Home() {
   const { redirect } = router.query;
   function signInFb() {
     const provider = new FacebookAuthProvider();
+    provider.setCustomParameters({
+      display: "popup",
+    });
     signInWithPopup(authentication, provider)
       .then((res) => {
         setMail("thene girdi");
