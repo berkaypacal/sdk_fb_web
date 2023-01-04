@@ -18,9 +18,9 @@ export default function Home() {
   const router = useRouter();
   const { redirect } = router.query;
 
-  const isOAuthRedirect = window.location.href.includes("?oauth_state_id=");
-
   useEffect(() => {
+    const isOAuthRedirect = window.location.href.includes("?oauth_state_id=");
+
     // do not generate a new token if page is handling an OAuth redirect.
     // instead setLinkToken to previously generated token from localStorage
     // https://plaid.com/docs/link/oauth/#reinitializing-link
