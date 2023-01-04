@@ -14,9 +14,7 @@ export default function Home() {
   const { redirect } = router.query;
   function signInFb() {
     const provider = new FacebookAuthProvider();
-    provider.setCustomParameters({
-      display: "popup",
-    });
+
     signInWithPopup(authentication, provider)
       .then((res) => {
         setMail("thene girdi");
@@ -35,7 +33,7 @@ export default function Home() {
   }
 
   const { open, ready } = usePlaidLink({
-    token: "link-sandbox-a194825e-47cc-4289-b8b3-86c02c971819",
+    token: "link-sandbox-93cc857c-6bbe-43bb-81b5-4357c7cb8bb1",
     onSuccess: (public_token, metadata) => {
       window.location.href = "" + redirect + "://?code=" + public_token;
       // send public_token to server
