@@ -11,10 +11,28 @@ import { usePlaidLink } from "react-plaid-link";
 export default function Home() {
   const [mail, setMail] = useState("");
   const [token, setToken] = useState("");
+  const [oatuhs, setoauth] = useState("");
+
   const [metadata, setMetadata] = useState("");
 
   const router = useRouter();
   const { redirect } = router.query;
+
+  const isOAuthRedirect = window.location.href.includes("?oauth_state_id=");
+
+  useEffect(() => {
+    // do not generate a new token if page is handling an OAuth redirect.
+    // instead setLinkToken to previously generated token from localStorage
+    // https://plaid.com/docs/link/oauth/#reinitializing-link
+    if (isOAuthRedirect) {
+      const { oauth_state_id } = router.query;
+      setoauth(oauth_state_id);
+      console.log(oauth_state_id);
+
+      return;
+    }
+  }, []);
+
   function signInFb() {
     const provider = new FacebookAuthProvider();
 
@@ -38,10 +56,9 @@ export default function Home() {
   const { open, ready } = usePlaidLink({
     token: "link-development-2510d6f3-b2cb-4270-ba4b-5189ae9fe36d",
     onSuccess: (public_token, metadata) => {
-      print(public_token);
-      setToken(public_token);
+      console.log(public_token);
       setMetadata(metadata);
-      print(metadata);
+      console.log(metadata);
       window.location.href = "" + redirect + "://?code=" + public_token;
       // send public_token to server
     },
@@ -49,9 +66,10 @@ export default function Home() {
 
   return (
     <>
+      {oatuhs} oatuhs <br></br>
       {mail} <br></br>
-      {public_token} <br></br>
-      {metadata} <br></br>
+      {token} token <br></br>
+      {metadata} metadata <br></br>
       <button onClick={() => signInFb()}>Sign in Facebook</button>
       <button onClick={() => open()} disabled={!ready}>
         Connect a bank account
