@@ -10,6 +10,9 @@ import { usePlaidLink } from "react-plaid-link";
 
 export default function Home() {
   const [mail, setMail] = useState("");
+  const [token, setToken] = useState("");
+  const [metadata, setMetadata] = useState("");
+
   const router = useRouter();
   const { redirect } = router.query;
   function signInFb() {
@@ -35,6 +38,10 @@ export default function Home() {
   const { open, ready } = usePlaidLink({
     token: "link-development-2510d6f3-b2cb-4270-ba4b-5189ae9fe36d",
     onSuccess: (public_token, metadata) => {
+      print(public_token);
+      setToken(public_token);
+      setMetadata(metadata);
+      print(metadata);
       window.location.href = "" + redirect + "://?code=" + public_token;
       // send public_token to server
     },
@@ -43,6 +50,8 @@ export default function Home() {
   return (
     <>
       {mail} <br></br>
+      {public_token} <br></br>
+      {metadata} <br></br>
       <button onClick={() => signInFb()}>Sign in Facebook</button>
       <button onClick={() => open()} disabled={!ready}>
         Connect a bank account
