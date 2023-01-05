@@ -48,7 +48,7 @@ export default function Home() {
               "intent://scan/#Intent;scheme=" +
               redirect +
               ";package=" +
-              redirect +
+              android_package +
               ";end";
           }
           window.location.href =
