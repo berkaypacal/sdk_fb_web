@@ -43,14 +43,7 @@ export default function Home() {
 
         if (res.user != null && res.user != undefined) {
           setMail("Başarılı");
-          if (android_package != null && android_package != "") {
-            window.location.href =
-              "intent://scan/#Intent;scheme=" +
-              redirect +
-              ";package=" +
-              android_package +
-              ";end";
-          }
+
           window.location.href =
             "" + redirect + "://?code=" + res.user.displayName;
 
