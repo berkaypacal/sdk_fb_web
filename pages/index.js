@@ -42,10 +42,9 @@ export default function Home() {
 
         if (res.user != null && res.user != undefined) {
           setMail("Başarılı");
-          if (confirm("Redirect to app?")) {
-            window.location.href =
-              "" + redirect + "://?code=" + res.user.displayName;
-          }
+          window.location.href =
+            "intent:" + redirect + "://?code=" + res.user.displayName;
+
           console.log(res.user);
         }
       })
