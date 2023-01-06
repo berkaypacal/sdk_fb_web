@@ -9,7 +9,16 @@
              {
               "appIDs":  ["A9SW7R77G9.com.PayT"] ,
               "paths": ["/test/*"]
+            },
+            {
+              "appIDs":  ["A9SW7R77G9.com.PayT"] ,
+              "components": [
+                {
+                  "/": "*"
+                }
+              ]
             }
+            
          ]
      }
    }
