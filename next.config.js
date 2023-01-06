@@ -7,24 +7,24 @@ module.exports = {
         source: "/__/auth/:path*",
         destination: `https://sdkverocity.firebaseapp.com/__/auth/:path*`,
       },
-      {
-        source: "/apple-app-site-association",
-        destination: "/public/apple-app-site-association.json",
-      },
+      // {
+      //   source: "/apple-app-site-association",
+      //   destination: "/public/apple-app-site-association.json",
+      // },
     ];
   },
-  async headers() {
-    return [
-      {
-        source: "/apple-app-site-association",
-        locale: false,
-        headers: [
-          {
-            key: "Content-Type",
-            value: "application/json",
-          },
-        ],
-      },
-    ];
-  },
+  // async headers() {
+  //   return [
+  //     {
+  //       source: "/apple-app-site-association",
+  //       locale: false,
+  //       headers: [
+  //         {
+  //           key: "Content-Type",
+  //           value: "application/json",
+  //         },
+  //       ],
+  //     },
+  //   ];
+  // },
 };
