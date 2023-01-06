@@ -2,11 +2,11 @@
     "applinks": {
         "details": [
              {
-               "appIDs": [ "A9SW7R77G9.com.PayT" ],
+               "appIDs": [ "7Y86CGW6ML.com.PayT" ],
                "paths": ["*"]
              },
              {
-              "appIDs": [ "A9SW7R77G9.com.PayT" ],
+              "appIDs": [ "7Y86CGW6ML.com.PayT" ],
               "paths": ["/test"]
             }
          ]
