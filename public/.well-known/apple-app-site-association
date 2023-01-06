@@ -2,7 +2,7 @@
     "applinks": {
         "details": [
              {
-               "appIDs": [ "com.PayT" ],
+               "appIDs": [ "A9SW7R77G9.com.PayT" ],
                "components": [
                  {
                     "/": "/plaid/*",

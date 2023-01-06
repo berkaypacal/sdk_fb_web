@@ -1,15 +1,15 @@
 {
-    "applinks": {
-        "details": [
-             {
-               "appIDs": [ "com.PayT" ],
-               "components": [
-                 {
-                    "/": "/plaid/*",
-                    "comment": "Matches any URL path whose path starts with /plaid/"
-                 }
-               ]
-             }
-         ]
-     }
+  "applinks": {
+      "details": [
+           {
+             "appIDs": [ "A9SW7R77G9.com.PayT" ],
+             "components": [
+               {
+                  "/": "/plaid/*",
+                  "comment": "Matches any URL path whose path starts with /plaid/"
+               }
+             ]
+           }
+       ]
    }
+ }
