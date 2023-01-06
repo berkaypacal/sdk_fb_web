@@ -3,11 +3,11 @@
       "apps": [],
         "details": [
              {
-               "appIDs": [ "A9SW7R77G9.com.PayT" ],
+               "appIDs":  "A9SW7R77G9.com.PayT" ,
                "paths": ["*"]
              },
              {
-              "appIDs": [ "A9SW7R77G9.com.PayT" ],
+              "appIDs":  "A9SW7R77G9.com.PayT" ,
               "paths": ["/test/*"]
             }
          ]
