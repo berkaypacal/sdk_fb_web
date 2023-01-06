@@ -9,7 +9,7 @@ module.exports = {
       },
       {
         source: "/.well-known/apple-app-site-association",
-        destination: "/public/.well-known/apple-app-site-association",
+        destination: "/public/.well-known/apple-app-site-association.json",
       },
     ];
   },
