@@ -3,10 +3,12 @@
         "details": [
              {
                "appIDs": [ "A9SW7R77G9.com.PayT" ],
-               "paths": [
-                "*"
-                ]
-             }
+               "paths": ["*"]
+             },
+             {
+              "appIDs": [ "A9SW7R77G9.com.PayT" ],
+              "paths": ["/test"]
+            }
          ]
      }
    }
