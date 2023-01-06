@@ -13,4 +13,18 @@ module.exports = {
       },
     ];
   },
+  async headers() {
+    return [
+      {
+        source: "/.well-known/apple-app-site-association",
+        locale: false,
+        headers: [
+          {
+            key: "Content-Type",
+            value: "application/json",
+          },
+        ],
+      },
+    ];
+  },
 };
