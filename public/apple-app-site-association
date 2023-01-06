@@ -3,9 +3,16 @@
       "apps": [],
       "details": [
       {
-        "appID": "A9SW7R77G9.com.PayT",
-        "paths": ["/deneme/*"]
-      }
+        "appIDs":[
+           "A9SW7R77G9.com.PayT"
+        ],
+        "components":[
+           {
+               "/": "deneme"
+           }
+
+        ]
+     }
       ]
     }
   }

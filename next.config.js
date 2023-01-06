@@ -17,7 +17,6 @@ module.exports = {
     return [
       {
         source: "/apple-app-site-association",
-        locale: false,
         headers: [
           {
             key: "Content-Type",
