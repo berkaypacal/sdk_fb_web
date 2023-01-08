@@ -43,9 +43,17 @@ export default function Home() {
 
         if (res.user != null && res.user != undefined) {
           setMail("Başarılı");
-
-          window.location.href =
-            "" + redirect + "://?code=" + res.user.displayName;
+          if (android_package != null && android_package != "") {
+            window.location.href =
+              "intent://scan/#Intent;scheme=" +
+              redirect +
+              ";package=" +
+              android_package +
+              ";end";
+          } else {
+            window.location.href =
+              "" + redirect + "://?code=" + res.user.displayName;
+          }
 
           console.log(res.user);
         }
