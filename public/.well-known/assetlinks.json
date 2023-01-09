@@ -5,9 +5,9 @@
       ],
       "target": {
          "namespace": "android_app",
-         "package_name": "com.example.kotlinnew",
+         "package_name": "com.example.library_try",
          "sha256_cert_fingerprints": [
-            "A7:A1:51:77:B2:7B:91:50:6D:72:8C:F9:04:D1:47:6E:E8:39:58:C8:66:18:39:69:FF:29:EC:0E:D8:DD:5F:D6"
+            "44:B0:EE:0C:23:85:D6:B5:B1:E9:FE:D7:23:10:6C:27:A9:D2:D7:9C:53:C7:C3:EB:71:76:12:91:73:3C:A8:2E"
          ]
       }
    }
