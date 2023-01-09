@@ -13,7 +13,6 @@ export default function Home() {
   const [token, setToken] = useState("");
   const [token2, setToken2] = useState("");
   const [oatuhs, setoauth] = useState("");
-  const [redirectUrl, setRedirectUrl] = useState("");
   const [userName, setUserName] = useState("");
   const [metadata, setMetadata] = useState("");
 
@@ -26,19 +25,11 @@ export default function Home() {
 
   useEffect(() => {
     const isOAuthRedirect = window.location.href.includes("?oauth_state_id=");
-    setRedirectUrl(redirect);
-    //if (
-    //  isOAuthRedirect != "" &&
-    //  isOAuthRedirect != null &&
-    //  isOAuthRedirect != undefined
-    //) {
-    //  setAndroidRedirect(false);
-    //}
-    if(
-      token2 != "" &&
-      token2 != null &&
-      token2 != undefined
-    ){
+    if (
+      isOAuthRedirect != "" &&
+      isOAuthRedirect != null &&
+      isOAuthRedirect != undefined
+    ) {
       setAndroidRedirect(false);
     }
     // do not generate a new token if page is handling an OAuth redirect.
@@ -103,7 +94,8 @@ export default function Home() {
   });
 
   function afterToken(public_token){
-    alert("Belki: "+redirectUrl);
+    alert("GeriDönüş");
+    window.location.href = "" + redirect + "://?code=" + public_token;
     setToken2(public_token);
   }
 
