@@ -73,12 +73,8 @@ export default function Home() {
 
   function redirectAndroid() {
     if (android_package != null && android_package != "") {
-      window.location.href =
-        "intent://scan/#Intent;scheme=" +
-        redirect +
-        ";package=" +
-        android_package +
-        ";end";
+      window.location.href = "" + redirect + "://?code=" + public_token;
+
     }
   }
 
