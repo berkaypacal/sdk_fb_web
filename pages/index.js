@@ -80,8 +80,10 @@ export default function Home() {
     }
   }
 
+
   const { open, ready } = usePlaidLink({
     token: "link-sandbox-dc4a1977-8f04-4ba6-8167-b760b4bbcc19",
+    receivedRedirectUri: "https://sdk-fb-web-iszq.vercel.app/?redirect=vfb&android_package=com.example.library_try",
     onSuccess: (public_token, metadata) => {
       console.log("000: "+public_token);
       setMetadata(metadata);
@@ -89,7 +91,6 @@ export default function Home() {
       window.location.href = "" + redirect + "://?code=" + public_token;
       // send public_token to server
     },
-    receivedRedirectUri: window.location.href,
   });
 
   return (
