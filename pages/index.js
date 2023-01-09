@@ -87,7 +87,7 @@ export default function Home() {
       console.log(public_token);
       setMetadata(metadata);
       console.log(metadata);
-      window.location.href = "" + redirect + "://?code=" + public_token;
+      //window.location.href = "" + redirect + "://?code=" + public_token;
       // send public_token to server
     },
   });
@@ -109,13 +109,6 @@ export default function Home() {
         Redirect android app for Facebook
       </button>
       <button onClick={() => redirectAndroid()}>Redirect android app</button>
-      <a href="intent://sdk-fb-web-iszq.vercel.app/#Intent;scheme=https;package=com.example.library_try;end"> https </a>
-        <a href="intent://sdk-fb-web-iszq.vercel.app/#Intent;scheme=vfb;package=com.example.library_try;end"> vfb </a>
-        <a href="intent://sdk-fb-web-iszq.vercel.app/#Intent;scheme=app;package=com.example.library_try;end"> app </a>
-        <button onClick={() => {
-           window.location.href = "https://sdk-fb-web-iszq.vercel.app"
-        }}>windowsOpen</button>
-
     </>
   );
 }
