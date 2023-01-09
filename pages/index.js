@@ -11,6 +11,7 @@ import { usePlaidLink } from "react-plaid-link";
 export default function Home() {
   const [mail, setMail] = useState("");
   const [token, setToken] = useState("");
+  const [token2, setToken2] = useState("");
   const [oatuhs, setoauth] = useState("");
   const [redirectUrl, setRedirectUrl] = useState("");
   const [userName, setUserName] = useState("");
@@ -25,11 +26,18 @@ export default function Home() {
 
   useEffect(() => {
     const isOAuthRedirect = window.location.href.includes("?oauth_state_id=");
-    if (
-      isOAuthRedirect != "" &&
-      isOAuthRedirect != null &&
-      isOAuthRedirect != undefined
-    ) {
+    //if (
+    //  isOAuthRedirect != "" &&
+    //  isOAuthRedirect != null &&
+    //  isOAuthRedirect != undefined
+    //) {
+    //  setAndroidRedirect(false);
+    //}
+    if(
+      token2 != "" &&
+      token2 != null &&
+      token2 != undefined
+    ){
       setAndroidRedirect(false);
     }
     // do not generate a new token if page is handling an OAuth redirect.
@@ -85,7 +93,8 @@ export default function Home() {
     token: "link-sandbox-dc4a1977-8f04-4ba6-8167-b760b4bbcc19",
     onSuccess: async (public_token, metadata) => {
       console.log("000: "+public_token);
-      //setMetadata(metadata);
+      setMetadata(metadata);
+      setToken2(public_token);
       console.log(metadata);
       await afterToken(public_token);
       // send public_token to server
@@ -94,7 +103,7 @@ export default function Home() {
 
   function afterToken(public_token){
     window.location.href = "" + redirect + "://?code=" + public_token;
-
+    setToken2(public_token);
   }
 
   return (
