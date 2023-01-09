@@ -83,9 +83,10 @@ export default function Home() {
   const { open, ready } = usePlaidLink({
     token: "link-sandbox-dc4a1977-8f04-4ba6-8167-b760b4bbcc19",
     onSuccess: (public_token, metadata) => {
-      console.log(public_token);
+      console.log("000: "+public_token);
       setMetadata(metadata);
       console.log(metadata);
+      receivedRedirectUri = window.location.href + redirect + "://code=" + public_token;
       //window.location.href = "" + redirect + "://?code=" + public_token;
       // send public_token to server
     },
