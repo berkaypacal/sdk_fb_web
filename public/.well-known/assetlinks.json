@@ -1,14 +1,12 @@
-[
-   {
-      "relation": [
-         "delegate_permission/common.handle_all_urls"
-      ],
-      "target": {
-         "namespace": "android_app",
-         "package_name": "com.example.library_try",
-         "sha256_cert_fingerprints": [
-            "C3:E9:E9:8D:0B:A7:05:F5:30:79:87:7B:69:14:7F:41:E9:93:9B:1A:1B:48:4A:C0:30:E5:60:B0:1F:86:70:7B"
-         ]
-      }
+{
+   "relation": [
+      "delegate_permission/common.handle_all_urls"
+   ],
+   "target": {
+      "namespace": "android_app",
+      "package_name": "com.example.library_try",
+      "sha256_cert_fingerprints": [
+         "C3:E9:E9:8D:0B:A7:05:F5:30:79:87:7B:69:14:7F:41:E9:93:9B:1A:1B:48:4A:C0:30:E5:60:B0:1F:86:70:7B"
+      ]
    }
-]
+}
