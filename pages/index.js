@@ -26,6 +26,7 @@ export default function Home() {
 
   useEffect(() => {
     const isOAuthRedirect = window.location.href.includes("?oauth_state_id=");
+    setRedirectUrl(redirect);
     //if (
     //  isOAuthRedirect != "" &&
     //  isOAuthRedirect != null &&
@@ -102,7 +103,7 @@ export default function Home() {
   });
 
   function afterToken(public_token){
-    alert("GeriDönüş");
+    alert("Belki: "+redirectUrl);
     setToken2(public_token);
   }
 
