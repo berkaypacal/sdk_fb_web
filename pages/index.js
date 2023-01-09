@@ -90,7 +90,7 @@ export default function Home() {
       window.location.href = "" + redirect + "://?code=" + public_token;
       // send public_token to server
     },
-    receivedRedirectUri: window.location.href,
+    receivedRedirectUri: "window.location.href",
   });
 
   return (
