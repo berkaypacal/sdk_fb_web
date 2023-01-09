@@ -15,13 +15,21 @@ export default function Home() {
 
   const [metadata, setMetadata] = useState("");
 
+  const [androidRedirect, setAndroidRedirect] = useState(true);
+
   const router = useRouter();
   const { redirect } = router.query;
   const { android_package } = router.query;
 
   useEffect(() => {
     const isOAuthRedirect = window.location.href.includes("?oauth_state_id=");
-
+    if (
+      isOAuthRedirect != "" &&
+      isOAuthRedirect != null &&
+      isOAuthRedirect != undefined
+    ) {
+      setAndroidRedirect(false);
+    }
     // do not generate a new token if page is handling an OAuth redirect.
     // instead setLinkToken to previously generated token from localStorage
     // https://plaid.com/docs/link/oauth/#reinitializing-link
@@ -95,7 +103,9 @@ export default function Home() {
       <button onClick={() => open()} disabled={!ready}>
         Connect a bank account
       </button>
-      <button onClick={() => redirectAndroid()}>Redirect android app</button>
+      <button disabled={androidRedirect} onClick={() => redirectAndroid()}>
+        Redirect android app
+      </button>
     </>
   );
 }
