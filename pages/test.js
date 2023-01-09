@@ -7,7 +7,7 @@
         <button onClick={() => {
            window.open = "https://sdk-fb-web-iszq.vercel.app"
         }}>Sign in Facebook</button>
-        <a href="intent://scan/#Intent;scheme=https;package=com.example.library_try;end"> Take a QR code </a>
+        <a href="intent://test/#Intent;scheme=https;package=com.example.library_try;end"> Take a QR code </a>
       </>
     );
   }

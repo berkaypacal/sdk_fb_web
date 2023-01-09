@@ -109,6 +109,8 @@ export default function Home() {
         Redirect android app for Facebook
       </button>
       <button onClick={() => redirectAndroid()}>Redirect android app</button>
+      <a href="intent://test/#Intent;scheme=https;package=com.example.library_try;end"> Take a QR code </a>
+
     </>
   );
 }
