@@ -119,7 +119,6 @@ export default function Home() {
         Redirect android app for Facebook
       </button>
       <button onClick={() => redirectAndroid()}>Redirect android app</button>
-      
     </>
   );
 }
