@@ -116,7 +116,7 @@ export default function Home() {
         disabled={androidRedirectFB}
         onClick={() => redirectAndroidFacebok()}
       >
-        Redirect android app for Facebook
+        Redirect  android app for Facebook
       </button>
       <button onClick={() => redirectAndroid()}>Redirect android app</button>
     </>
