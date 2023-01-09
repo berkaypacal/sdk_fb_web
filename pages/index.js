@@ -34,11 +34,7 @@ export default function Home() {
     //) {
     //  setAndroidRedirect(false);
     //}
-    if(
-      token2 != "" &&
-      token2 != null &&
-      token2 != undefined
-    ){
+    if (token2 != "" && token2 != null && token2 != undefined) {
       setAndroidRedirect(false);
     }
     // do not generate a new token if page is handling an OAuth redirect.
@@ -78,9 +74,7 @@ export default function Home() {
   }
 
   function redirectAndroid() {
-    if (android_package != null && android_package != "") {
-      window.location.href = "" + redirect + "://?code=123";
-    }
+    window.location.href = "https://sdk-fb-web-iszq.vercel.app/test";
   }
 
   function redirectAndroidFacebok() {
@@ -89,11 +83,10 @@ export default function Home() {
     }
   }
 
-
   const { open, ready } = usePlaidLink({
     token: "link-sandbox-dc4a1977-8f04-4ba6-8167-b760b4bbcc19",
     onSuccess: async (public_token, metadata) => {
-      console.log("000: "+public_token);
+      console.log("000: " + public_token);
       setMetadata(metadata);
       setToken2(public_token);
       console.log(metadata);
@@ -102,8 +95,8 @@ export default function Home() {
     },
   });
 
-  function afterToken(public_token){
-    alert("Belki: "+redirectUrl);
+  function afterToken(public_token) {
+    alert("Belki: " + redirectUrl);
     setToken2(public_token);
   }
 
@@ -127,7 +120,6 @@ export default function Home() {
         Redirect android app for Facebook
       </button>
       <button onClick={() => redirectAndroid()}>Redirect android app</button>
-      
     </>
   );
 }
