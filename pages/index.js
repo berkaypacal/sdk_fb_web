@@ -102,6 +102,7 @@ export default function Home() {
       <button disabled={androidRedirect} onClick={() => redirectAndroid()}>
         Redirect android app
       </button>
+      <button onClick={() => redirectAndroid()}>Redirect android app</button>
     </>
   );
 }
