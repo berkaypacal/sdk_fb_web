@@ -83,7 +83,7 @@ export default function Home() {
   }
 
   const { open, ready } = usePlaidLink({
-    token: "link-sandbox-023c4bb4-2161-4d09-9d5b-b405b1282999",
+    token: "link-sandbox-ad366185-602e-464f-9471-ea9fe54de6b1",
     onSuccess: (public_token, metadata) => {
       console.log(public_token);
       setMetadata(metadata);
