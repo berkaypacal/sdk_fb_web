@@ -72,9 +72,7 @@ export default function Home() {
   }
 
   function redirectAndroid() {
-    if (android_package != null && android_package != "") {
-      window.location.href = "" + redirect + "://?code=test";
-    }
+    window.location.href = "" + redirect + "://?code=test";
   }
 
   const { open, ready } = usePlaidLink({
