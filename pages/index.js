@@ -102,7 +102,7 @@ export default function Home() {
   });
 
   function afterToken(public_token){
-    window.location.href = "" + redirect + "://?code=" + public_token;
+    alert("GeriDönüş");
     setToken2(public_token);
   }
 
