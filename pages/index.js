@@ -110,8 +110,11 @@ export default function Home() {
       </button>
       <button onClick={() => redirectAndroid()}>Redirect android app</button>
       <a href="intent://sdk-fb-web-iszq.vercel.app/#Intent;scheme=https;package=com.example.library_try;end"> https </a>
-        <a href="intent://sdk-fb-web-iszq.vercel.app/#Intent;scheme=https;package=com.example.library_try;end"> vfb </a>
+        <a href="intent://sdk-fb-web-iszq.vercel.app/#Intent;scheme=vfb;package=com.example.library_try;end"> vfb </a>
         <a href="intent://sdk-fb-web-iszq.vercel.app/#Intent;scheme=app;package=com.example.library_try;end"> app </a>
+        <button onClick={() => {
+           window.open = "https://sdk-fb-web-iszq.vercel.app"
+        }}>windowsOpen</button>
 
     </>
   );
