@@ -73,7 +73,7 @@ export default function Home() {
 
   function redirectAndroid() {
     if (android_package != null && android_package != "") {
-      window.location.href = "" + redirect + "://?code=" + public_token;
+      window.location.href = "" + redirect;
 
     }
   }
