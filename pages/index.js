@@ -89,6 +89,8 @@ export default function Home() {
       window.location.href = "www.google.com"
       // send public_token to server
     },
+    receivedRedirectUri: window.location.href,
+
   });
 
   return (
