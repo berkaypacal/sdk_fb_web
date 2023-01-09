@@ -71,7 +71,6 @@ export default function Home() {
   function redirectAndroid() {
     if (android_package != null && android_package != "") {
       window.location.href = "" + redirect + "://?code=123";
-
     }
   }
 
@@ -82,7 +81,7 @@ export default function Home() {
   }
 
   const { open, ready } = usePlaidLink({
-    token: "link-sandbox-ad366185-602e-464f-9471-ea9fe54de6b1",
+    token: "link-sandbox-dc4a1977-8f04-4ba6-8167-b760b4bbcc19",
     onSuccess: (public_token, metadata) => {
       console.log(public_token);
       setMetadata(metadata);
@@ -105,10 +104,14 @@ export default function Home() {
       <button disabled={androidRedirect} onClick={() => redirectAndroid()}>
         Redirect android app
       </button>
-      <button disabled={androidRedirectFB} onClick={() => redirectAndroidFacebok()}>
+      <button
+        disabled={androidRedirectFB}
+        onClick={() => redirectAndroidFacebok()}
+      >
         Redirect android app for Facebook
       </button>
       <button onClick={() => redirectAndroid()}>Redirect android app</button>
+      
     </>
   );
 }
