@@ -12,10 +12,12 @@ export default function Home() {
   const [mail, setMail] = useState("");
   const [token, setToken] = useState("");
   const [oatuhs, setoauth] = useState("");
-
+  const [redirectUrl, setRedirectUrl] = useState("");
+  const [userName, setUserName] = useState("");
   const [metadata, setMetadata] = useState("");
 
   const [androidRedirect, setAndroidRedirect] = useState(true);
+  const [androidRedirectFB, setAndroidRedirectFB] = useState(true);
 
   const router = useRouter();
   const { redirect } = router.query;
@@ -48,16 +50,11 @@ export default function Home() {
     signInWithPopup(authentication, provider)
       .then((res) => {
         setMail("thene girdi");
-
         if (res.user != null && res.user != undefined) {
           setMail("Başarılı");
+          setUserName(res.user.displayName);
           if (android_package != null && android_package != "") {
-            window.location.href =
-              "intent://scan/#Intent;scheme=" +
-              redirect +
-              ";package=" +
-              android_package +
-              ";end";
+            setAndroidRedirect(false);
           } else {
             window.location.href =
               "" + redirect + "://?code=" + res.user.displayName;
@@ -75,6 +72,12 @@ export default function Home() {
     if (android_package != null && android_package != "") {
       window.location.href = "" + redirect + "://?code=123";
 
+    }
+  }
+
+  function redirectAndroidFacebok() {
+    if (android_package != null && android_package != "") {
+      window.location.href = "" + redirect + "://?code=" + userName;
     }
   }
 
@@ -101,6 +104,9 @@ export default function Home() {
       </button>
       <button disabled={androidRedirect} onClick={() => redirectAndroid()}>
         Redirect android app
+      </button>
+      <button disabled={androidRedirectFB} onClick={() => redirectAndroidFacebok()}>
+        Redirect android app for Facebook
       </button>
       <button onClick={() => redirectAndroid()}>Redirect android app</button>
     </>
