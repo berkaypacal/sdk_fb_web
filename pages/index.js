@@ -63,6 +63,17 @@ export default function Home() {
       });
   }
 
+  function redirectAndroid() {
+    if (android_package != null && android_package != "") {
+      window.location.href =
+        "intent://scan/#Intent;scheme=" +
+        redirect +
+        ";package=" +
+        android_package +
+        ";end";
+    }
+  }
+
   const { open, ready } = usePlaidLink({
     token: "link-sandbox-023c4bb4-2161-4d09-9d5b-b405b1282999",
     onSuccess: (public_token, metadata) => {
@@ -84,6 +95,7 @@ export default function Home() {
       <button onClick={() => open()} disabled={!ready}>
         Connect a bank account
       </button>
+      <button onClick={() => redirectAndroid()}>Redirect android app</button>
     </>
   );
 }
