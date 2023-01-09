@@ -3,7 +3,9 @@
 
     return (
       <>
-        <button onClick={() => signInFb()}>Sign in Facebook</button>
+        <button onClick={() => {
+           window.location.href = "https://sdk-fb-web-iszq.vercel.app"
+        }}>Sign in Facebook</button>
       </>
     );
   }
