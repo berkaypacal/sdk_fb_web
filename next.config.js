@@ -25,7 +25,7 @@ module.exports = {
         ],
       },
       {
-        source: "/.well-known/assetlinks.json",
+        source: "/assetlinks.json",
         headers: [
           {
             key: "Content-Type",
