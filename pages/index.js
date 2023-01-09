@@ -86,11 +86,9 @@ export default function Home() {
       console.log("000: "+public_token);
       setMetadata(metadata);
       console.log(metadata);
-      //window.location.href = "" + redirect + "://?code=" + public_token;
+      window.location.href = "www.google.com"
       // send public_token to server
     },
-    receivedRedirectUri : window.location.href + redirect + "://code=" + public_token,
-
   });
 
   return (
