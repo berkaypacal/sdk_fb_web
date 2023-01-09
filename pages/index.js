@@ -54,7 +54,7 @@ export default function Home() {
           setMail("Başarılı");
           setUserName(res.user.displayName);
           if (android_package != null && android_package != "") {
-            setAndroidRedirect(false);
+            setAndroidRedirectFB(false);
           } else {
             window.location.href =
               "" + redirect + "://?code=" + res.user.displayName;
