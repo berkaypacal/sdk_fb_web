@@ -1,5 +1,9 @@
 [{
    "relation": ["delegate_permission/common.handle_all_urls"],
-   "target" : { "namespace": "android_app", "package_name": "com.testApp",
-                "sha256_cert_fingerprints": ["42:D8:9F:AD:F9:63:A9:36:AC:E5:20:4E:A1:1F:09:A2:E5:F2:79:24:93:D5:30:47:9D:8E:1D:F3:9A:64:D6:93"] }
+   "target": {
+     "namespace": "android_app",
+     "package_name": "com.payt.testlink",
+     "sha256_cert_fingerprints":
+     ["E6:9F:28:2F:FB:8F:86:75:42:A0:B4:CE:E8:36:06:83:F5:F0:AD:C2:AA:0E:30:F4:BD:BC:3A:DE:06:46:7F:BA"]
+   }
  }]
