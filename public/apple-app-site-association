@@ -4,7 +4,7 @@
       "details": [
       {
         "appIDs":[
-           "com.SwiftUIDemoWalletSDK"
+           "com.PayT","com.SwiftUIDemoWalletSDK"
         ],
         "components":[
            {
