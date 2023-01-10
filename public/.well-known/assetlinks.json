@@ -5,9 +5,9 @@
       ],
       "target": {
          "namespace": "android_app",
-         "package_name": "com.example.library_try",
+         "package_name": "com.sdk.mtdt",
          "sha256_cert_fingerprints": [
-            "16:C9:94:E1:7E:E3:F6:E9:1D:A3:5B:05:77:92:A3:E1:EA:C7:E3:63:BE:C0:8B:49:5B:BC:73:01:8E:7F:D9:A1"
+            "C4:9E:B3:FC:BD:63:6A:75:0C:17:0F:58:2F:69:B9:DC:A7:DC:21:DA:A7:DD:C3:C3:20:67:AB:8D:4E:C1:F6:94"
          ]
       }
    }
