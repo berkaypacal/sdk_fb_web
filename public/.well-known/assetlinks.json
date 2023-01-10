@@ -1,14 +1,9 @@
-[
-   {
-      "relation": [
-         "delegate_permission/common.handle_all_urls"
-      ],
-      "target": {
-         "namespace": "android_app",
-         "package_name": "com.sdk.mtdt",
-         "sha256_cert_fingerprints": [
-            "C4:9E:B3:FC:BD:63:6A:75:0C:17:0F:58:2F:69:B9:DC:A7:DC:21:DA:A7:DD:C3:C3:20:67:AB:8D:4E:C1:F6:94"
-         ]
-      }
-   }
-]
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.sdk.mtdt",
+    "sha256_cert_fingerprints":
+    ["C4:9E:B3:FC:BD:63:6A:75:0C:17:0F:58:2F:69:B9:DC:A7:DC:21:DA:A7:DD:C3:C3:20:67:AB:8D:4E:C1:F6:94"]
+  }
+}]
