@@ -80,11 +80,10 @@ export default function Home() {
     }
   }
 
-
   const { open, ready } = usePlaidLink({
-    token: "link-sandbox-dc4a1977-8f04-4ba6-8167-b760b4bbcc19",
+    token: "link-sandbox-12f49232-d38b-4760-b9e8-a7cdfc83b68d",
     onSuccess: async (public_token, metadata) => {
-      console.log("000: "+public_token);
+      console.log("000: " + public_token);
       setMetadata(metadata);
       setToken2(public_token);
       console.log(metadata);
@@ -93,7 +92,7 @@ export default function Home() {
     },
   });
 
-  function afterToken(public_token){
+  function afterToken(public_token) {
     alert("GeriDönüş");
     window.location.href = "" + redirect + "://?code=" + public_token;
     setToken2(public_token);
@@ -116,7 +115,7 @@ export default function Home() {
         disabled={androidRedirectFB}
         onClick={() => redirectAndroidFacebok()}
       >
-        Redirect  android app for Facebook
+        Redirect android app for Facebook
       </button>
       <button onClick={() => redirectAndroid()}>Redirect android app</button>
     </>
