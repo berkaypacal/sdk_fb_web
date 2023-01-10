@@ -2,15 +2,9 @@
     "applinks": {
       "apps": [],
       "details": [
-      {
-        "appIDs":[
-           "A9SW7R77G9.com.demosdkapp"
-        ],
-        "components":[
-           {
-               "/": "deneme"
-           }
-        ]
+     {
+      "appID": "A9SW7R77G9.com.demosdkapp",
+      "paths": ["/deneme"]
      }
       ]
     }
