@@ -81,7 +81,7 @@ export default function Home() {
   }
 
   const { open, ready } = usePlaidLink({
-    token: "link-sandbox-12f49232-d38b-4760-b9e8-a7cdfc83b68d",
+    token: "link-sandbox-447e2da4-9d35-4f86-ba2b-6e24df0ef409",
     onSuccess: async (public_token, metadata) => {
       console.log("000: " + public_token);
       setMetadata(metadata);
