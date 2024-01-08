@@ -7,6 +7,18 @@
         "paths": [
           "/deneme"
         ]
+      },
+      {
+        "appID": "G8N4UQNHW2.com.freedompay.FakeShackDemoApp.qa",
+        "paths": [
+          "/deneme"
+        ]
+      },
+      {
+        "appID": "G8N4UQNHW2.com.freedompay.FakeShackDemoApp.uat",
+        "paths": [
+          "/deneme"
+        ]
       }
     ]
   }
