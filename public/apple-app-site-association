@@ -3,6 +3,12 @@
     "apps": [],
     "details": [
       {
+        "appID": "G8N4UQNHW2.com.freedompay.FakeShackDemoApp.uat",
+        "paths": [
+          "/deneme"
+        ]
+      },
+      {
         "appID": "G8N4UQNHW2.com.freedompay.FakeShackDemoApp",
         "paths": [
           "/deneme"
@@ -14,12 +20,6 @@
           "/deneme"
         ]
       },
-      {
-        "appID": "G8N4UQNHW2.com.freedompay.FakeShackDemoApp.uat",
-        "paths": [
-          "/deneme"
-        ]
-      }
     ]
   }
 }
